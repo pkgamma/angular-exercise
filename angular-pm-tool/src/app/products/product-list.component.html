@@ -1,27 +1,29 @@
-<div class = 'card'>
-    <div class = 'card-header'>
+<div class='card mt-4'>
+    <div class='card-header'>
         {{pageTitle}}
     </div>
-    <div class = 'card-body'>
-        <div class = 'row'>
-            <div class = 'col-md-2'>Filter by:</div>
-            <div class = 'col-md-4'><input type = 'text' [(ngModel)] = 'listFilter'/></div>
-            <button class = 'btn btn-secondary btn-sm' 
-                *ngIf = 'listFilter'
-                (click) = 'clearInput()'>Clear Input</button>
+    <div class='card-body'>
+        <div class='row'>
+            <div class='col-md-2'>Search:</div>
+            <div class='col-md-4'><input type='text'
+                       [(ngModel)]='listFilter' /></div>
+            <button class='btn btn-secondary btn-sm'
+                    *ngIf='listFilter'
+                    (click)='clearInput()'>Clear Search</button>
         </div>
-        <div class = 'row'>
-            <div class = 'col-md-6'>
+        <div class='row mt-4'>
+            <div class='col-md-6'>
                 <h4>Filtered by: {{listFilter}}</h4>
             </div>
         </div>
-        <div class = 'table-responsive' *ngIf = 'products && products.length'>
-            <table class = 'table'>
-                <thead class = 'text-primary'>
+        <div class='table-responsive'
+             *ngIf='products && products.length'>
+            <table class='table'>
+                <thead class='text-primary'>
                     <tr>
                         <th>
-                            <button class = 'btn btn-primary'
-                            (click) = 'toggleImage()'>
+                            <button class='btn btn-primary'
+                                    (click)='toggleImage()'>
                                 {{showImage ? 'Hide' : "Show"}} Image
                             </button>
                         </th>
@@ -29,17 +31,17 @@
                         <th>Code</th>
                         <th>Available</th>
                         <th>Price</th>
-                        <th>5 Star Rating</th>
+                        <th>Ratings</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = 'let product of filteredProducts'>
+                    <tr *ngFor='let product of filteredProducts'>
                         <td>
-                            <img *ngIf = 'showImage'
-                            [src] = 'product.imageUrl' 
-                            [title] = 'product.productName' 
-                            [style.width.px] = 'imageWidth'
-                            [style.margin.px] = 'imageMargin'>
+                            <img *ngIf='showImage'
+                                 [src]='product.imageUrl'
+                                 [title]='product.productName'
+                                 [style.width.px]='imageWidth'
+                                 [style.margin.px]='imageMargin'>
                         </td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode | lowercase | convertToSpaces:'-'}}</td>
@@ -47,6 +49,11 @@
                         <td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>
                         <td>{{product.starRating}}</td>
                     </tr>
+                    <div *ngIf='filteredProducts.length == 0'
+                         class="alert alert-danger mt-4"
+                         role="alert">
+                        No matching result, please try again.
+                    </div>
                 </tbody>
             </table>
         </div>

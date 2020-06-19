@@ -10,8 +10,8 @@ export class ProductListComponent implements OnInit {
     pageTitle: string = "Product List";
     imageWidth: number = 50;
     imageMargin: number = 2;
-    showImage: boolean = false;
-    
+    showImage: boolean = true;
+
     _listFilter: string = 'cart';
     get listFilter(): string {
         return this._listFilter;
@@ -36,6 +36,16 @@ export class ProductListComponent implements OnInit {
     filteredProducts: IProduct[];
 
     products: IProduct[] = [
+        {
+            "productId": 1,
+            "productName": "Leaf Rake",
+            "productCode": "GDN-0011",
+            "releaseDate": "March 19, 2019",
+            "description": "Leaf rake with 48-inch wooden handle.",
+            "price": 19.95,
+            "starRating": 3.2,
+            "imageUrl": "assets/images/leaf_rake.png"
+        },
         {
             "productId": 2,
             "productName": "Garden Cart",
@@ -65,6 +75,16 @@ export class ProductListComponent implements OnInit {
             "price": 11.55,
             "starRating": 3.7,
             "imageUrl": "assets/images/saw.png"
+        },
+        {
+            "productId": 10,
+            "productName": "Video Game Controller",
+            "productCode": "GMG-0042",
+            "releaseDate": "October 15, 2018",
+            "description": "Standard two-button video game controller",
+            "price": 35.95,
+            "starRating": 4.6,
+            "imageUrl": "assets/images/xbox-controller.png"
         }
     ];
 
