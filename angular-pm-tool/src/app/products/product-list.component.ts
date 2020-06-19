@@ -72,6 +72,10 @@ export class ProductListComponent implements OnInit {
         this.showImage = !this.showImage;
     }
 
+    clearInput(): void {
+        this.listFilter = '';
+    }
+
     ngOnInit(): void {
         console.log('In OnInit');
     }
