@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
   `
 })
 export class AppComponent {
-  pageTitle: string = "Project Management Tool Beta";
+  pageTitle: string = "Basic Product Management Tool";
 }
