@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of filteredProducts'>
+                    <tr *ngFor='let product of filteredProducts' [style.height.px]='imageHeight'>
                         <td>
                             <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName'
                                 [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
@@ -43,7 +43,7 @@
                         <td>{{product.productCode | lowercase | convertToSpaces:'-'}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td>{{product.price | currency:'USD':'symbol':'1.2-2'}}</td>
-                        <td>{{product.starRating}}</td>
+                        <td><pm-star [rating] = 'product.starRating'></pm-star></td>
                     </tr>
                     <div *ngIf='filteredProducts.length == 0' class="alert alert-danger mt-4" role="alert">
                         No matching result, please try again.
