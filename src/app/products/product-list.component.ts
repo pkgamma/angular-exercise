@@ -50,7 +50,7 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log('In OnInit');
+        console.log('In OnInit of product list comp');
         this.productService.getProducts().subscribe({
             next: products => {
                 this.products = products;
