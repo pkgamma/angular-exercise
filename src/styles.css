@@ -3,7 +3,7 @@
 @import "~biings-ds/build/bds.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Crimson+Pro:wght@400;500;600;700&display=swap');
 div.card-header {
  font-size: large;
 }
