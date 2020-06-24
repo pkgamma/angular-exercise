@@ -59,6 +59,6 @@ export class ProductListComponent implements OnInit {
             error: err => this.errorMessage = err
         });
         // next line doesnt work yet, idk why, should i unsub first?
-        this.listFilter = 'cart';
+        // this.listFilter = 'cart';
     }
 }

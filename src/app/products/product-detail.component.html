@@ -1,7 +1,6 @@
-<div class='card' *ngIf='product'>
-    <div class='card-header'>
-        {{pageTitle + ', ' + product.productName}}
-    </div>
+<div *ngIf='product'>
+
+    <h3 class="title">{{pageTitle + ', ' + product.productName}}</h3>
 
     <div class='card-body'>
         <div class='row'>
@@ -42,9 +41,9 @@
         </div>
     </div>
 
-    <div class='card-footer'>
-        <button class='btn btn-outline-secondary' (click)='onBack()' style='width: 80px'>
-            <i class='fa fa-chevron-left'></i> Back
+    <div>
+        <button class='button is-shadowed' (click)='onBack()' style='width: 80px'>
+            <i class='fa fa-chevron-left mr-2'></i> Back
         </button>
     </div>
 </div>
